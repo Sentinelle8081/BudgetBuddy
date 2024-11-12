@@ -38,6 +38,61 @@
         >
       </div>
     </div>
+    <div class="modal-footer">
+      <a
+        href="#!"
+        class="modal-close waves-effect waves-green btn-flat"
+        onclick="updateExpense(selectedEvent, 
+        document.getElementById('edit-title').value, 
+        document.getElementById('edit-start').value, 
+        document.getElementById('edit-description').value, 
+        document.getElementById('edit-type').value)"
+        >Modifica</a
+      >
+    </div>
+    <!-- Modale per aggiungere una spesa o una spesa futura -->
+    <div id="expense-modal" class="modal">
+      <div class="modal-content">
+        <h4>Aggiungi Spesa o Programma Futuro</h4>
+        <!-- Form di inserimento -->
+        <form id="expense-form">
+          <label for="expense-type">Tipo di spesa</label>
+          <select id="expense-type">
+            <option value="spesa">Spesa</option>
+            <option value="programmazione">Programma Futuro</option>
+          </select>
+
+          <!-- Sezione spesa -->
+          <div id="payment-type-section" class="hidden">
+            <label for="payment-type">Metodo di pagamento</label>
+            <select id="payment-type">
+              <option value="contante">Contante</option>
+              <option value="contoCa">Conto Ca</option>
+              <option value="contoCh">Conto Ch</option>
+            </select>
+          </div>
+
+          <!-- Dettagli spesa -->
+          <label for="expense-title">Descrizione della spesa</label>
+          <input type="text" id="expense-title" required />
+
+          <label for="expense-description">Dettagli aggiuntivi</label>
+          <input type="text" id="expense-description" />
+
+          <label for="expense-date">Data della spesa</label>
+          <input type="date" id="expense-date" required />
+
+          <div class="modal-footer">
+            <a
+              href="#!"
+              class="modal-close waves-effect waves-green btn-flat"
+              onclick="saveExpense()"
+              >Salva</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
 
     <!-- Materialize JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
