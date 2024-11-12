@@ -1,14 +1,16 @@
 // js/calendar.js
-import { expensesData } from "..data/expensesData";
+import { expensesData } from "../datas/expensesData.js";
 
 export function generateCalendar(daysContainer, showSummary) {
-  daysContainer.innerHTML = ""; // pulisce i giorni precedenti
+  daysContainer.innerHTML = ""; // Cancella i giorni precedenti
 
+  // Genera 30 giorni per il mese corrente come esempio
   for (let day = 1; day <= 30; day++) {
     const dayElement = document.createElement("div");
     dayElement.classList.add("day");
     dayElement.textContent = day;
 
+    // Aggiunge l'evento di click per mostrare il riepilogo
     dayElement.addEventListener("click", () => showSummary(day));
     daysContainer.appendChild(dayElement);
   }
