@@ -1,5 +1,5 @@
 // js/calendar.js
-import { expensesData } from "../js/expensesData.js";
+import { expensesData } from "../data/expensesData";
 
 export function generateCalendar(daysContainer, showSummary) {
   daysContainer.innerHTML = ""; // pulisce i giorni precedenti
