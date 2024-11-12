@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestione Contabilità Familiare</title>
+    <title>Calendario Spese</title>
 
-    <!-- Link Materialize CSS -->
+    <!-- Materialize CSS -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
       rel="stylesheet"
@@ -18,13 +18,13 @@
     />
   </head>
   <body>
-    <!-- Contenitore del Calendario -->
+    <!-- Calendario -->
     <div id="calendar"></div>
 
-    <!-- Modale per i dettagli della spesa -->
+    <!-- Modale per i dettagli dell'evento -->
     <div id="expense-modal" class="modal">
       <div class="modal-content">
-        <h4 id="modal-title">Dettagli della Spesa</h4>
+        <h4 id="modal-title">Dettagli Evento</h4>
         <p>
           <strong>Descrizione:</strong> <span id="expense-description"></span>
         </p>
@@ -39,13 +39,14 @@
       </div>
     </div>
 
-    <!-- Aggiungi i link per Materialize e FullCalendar JS -->
+    <!-- Materialize JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="script.js"></script>
-    <!-- Il tuo file JS personalizzato -->
+    <!-- Script personalizzato -->
+    <script src="js/calendar.js"></script>
+    <!-- Includi il tuo file JS -->
   </body>
 </html>

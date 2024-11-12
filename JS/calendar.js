@@ -1,22 +1,38 @@
-// js/calendar.js
-import { expensesData } from "../datas/expensesData.js";
+$(document).ready(function () {
+  // Inizializza il modale di Materialize
+  $(".modal").modal();
 
-export function generateCalendar(daysContainer, showSummary) {
-  daysContainer.innerHTML = ""; // Cancella i giorni precedenti
+  // Configura il calendario FullCalendar
+  $("#calendar").fullCalendar({
+    header: {
+      left: "prev,next today",
+      center: "title",
+      right: "month,agendaWeek,agendaDay",
+    },
+    events: [
+      {
+        title: "Spesa alimentari",
+        start: "2024-11-01",
+        description: "Spesa settimanale per la famiglia",
+        tipo: "Contante",
+      },
+      {
+        title: "Pagamento affitto",
+        start: "2024-11-05",
+        description: "Affitto mensile",
+        tipo: "Conto 1",
+      },
+    ],
+    eventClick: function (event, jsEvent, view) {
+      // Quando un evento viene cliccato, apri il modale con i dettagli
+      document.getElementById("expense-description").textContent =
+        event.description;
+      document.getElementById("expense-type").textContent = event.tipo;
 
-  // Genera 30 giorni per il mese corrente come esempio
-  for (let day = 1; day <= 30; day++) {
-    const dayElement = document.createElement("div");
-    dayElement.classList.add("day");
-    dayElement.textContent = day;
-
-    // Aggiunge l'evento di click per mostrare il riepilogo
-    dayElement.addEventListener("click", () => showSummary(day));
-    daysContainer.appendChild(dayElement);
-  }
-}
-
-export function getExpensesForDay(day) {
-  const dateKey = `2024-11-${String(day).padStart(2, "0")}`;
-  return expensesData[dateKey] || [];
-}
+      // Mostra il modale
+      const modal = document.getElementById("expense-modal");
+      const modalInstance = M.Modal.getInstance(modal);
+      modalInstance.open();
+    },
+  });
+});
