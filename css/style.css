@@ -1,0 +1,43 @@
+/* Nasconde le modali all'inizio */
+.modal {
+  display: none !important; /* Forza la modale a essere nascosta */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Sfondo scuro */
+  z-index: 1000; /* Sovrascrive altri contenuti */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modale visibile quando 'display' cambia */
+.modal-show {
+  display: flex !important; /* Quando la classe .modal-show è aggiunta, la modale si mostra */
+}
+
+/* Altri stili per il contenuto della modale, come nel codice precedente */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Il pulsante di chiusura della modale */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close:hover {
+  color: #000;
+}
