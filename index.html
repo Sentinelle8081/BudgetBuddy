@@ -3,53 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendario Spese</title>
+    <title>Gestione Contabilità Familiare</title>
 
-    <!-- Materialize CSS -->
+    <!-- Inclusione di FullCalendar CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Inclusione di Materialize CSS (per il modale) -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
       rel="stylesheet"
     />
 
-    <!-- FullCalendar CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css"
-      rel="stylesheet"
-    />
+    <!-- Link al file CSS separato -->
+    <link href="styles.css" rel="stylesheet" />
   </head>
-  <body>
-    <!-- Calendario -->
-    <div id="calendar"></div>
 
-    <!-- Modale per i dettagli dell'evento -->
-    <div id="expense-modal" class="modal">
-      <div class="modal-content">
-        <h4 id="modal-title">Dettagli Evento</h4>
-        <p>
-          <strong>Descrizione:</strong> <span id="expense-description"></span>
-        </p>
-        <p>
-          <strong>Tipo di pagamento:</strong> <span id="expense-type"></span>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-          >Chiudi</a
-        >
-      </div>
+  <body>
+    <div class="container">
+      <h1>Calendario Spese</h1>
+
+      <!-- Calendario -->
+      <div id="calendar"></div>
     </div>
-    <div class="modal-footer">
-      <a
-        href="#!"
-        class="modal-close waves-effect waves-green btn-flat"
-        onclick="updateExpense(selectedEvent, 
-        document.getElementById('edit-title').value, 
-        document.getElementById('edit-start').value, 
-        document.getElementById('edit-description').value, 
-        document.getElementById('edit-type').value)"
-        >Modifica</a
-      >
-    </div>
+
     <!-- Modale per aggiungere una spesa o una spesa futura -->
     <div id="expense-modal" class="modal">
       <div class="modal-content">
@@ -94,14 +73,14 @@
       </div>
     </div>
 
-    <!-- Materialize JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+    <!-- Inclusione di jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Inclusione di FullCalendar JS -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+    <!-- Inclusione di Materialize JS (per il modale) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <!-- Script personalizzato -->
-    <script src="js/calendar.js"></script>
-    <!-- Includi il tuo file JS -->
+    <!-- Link al file JS separato -->
+    <script src="calendar.js"></script>
   </body>
 </html>
