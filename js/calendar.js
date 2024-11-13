@@ -35,6 +35,28 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Seleziona una voce da inserire!");
       }
     });
+  // JavaScript per gestire l'apertura della seconda finestra modale e il metodo di pagamento
+  document
+    .getElementById("selectTypeButton")
+    .addEventListener("click", function () {
+      var entryType = document.querySelector('input[name="entryType"]:checked');
+
+      if (entryType) {
+        document.getElementById("initialModal").style.display = "none";
+
+        // Mostra la sezione dei metodi di pagamento se la scelta è "spesa"
+        if (entryType.value === "spesa") {
+          document.getElementById("paymentMethods").style.display = "block";
+        } else {
+          document.getElementById("paymentMethods").style.display = "none";
+        }
+
+        // Mostra la seconda finestra modale
+        document.getElementById("detailsModal").style.display = "flex";
+      } else {
+        alert("Seleziona una voce da inserire!");
+      }
+    });
 
   // Gestione del salvataggio della voce
   document

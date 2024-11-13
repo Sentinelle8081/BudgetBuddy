@@ -54,3 +54,7 @@
   width: auto; /* Rende il pulsante più largo */
   text-align: center;
 }
+
+#paymentMethods {
+  margin-bottom: 15px;
+}

@@ -40,6 +40,37 @@
         <form id="entryForm">
           <label for="amount">Importo:</label>
           <input type="number" id="amount" name="amount" required />
+          <!-- Sezione metodi di pagamento (inizialmente nascosta) -->
+          <div id="paymentMethods" style="display: none">
+            <h5>Metodo di Pagamento:</h5>
+            <label>
+              <input
+                type="radio"
+                id="paymentMethodCash"
+                name="paymentMethod"
+                value="Contanti"
+              />
+              Contanti
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="paymentMethodCh"
+                name="paymentMethod"
+                value="Conto Ch"
+              />
+              Conto Ch
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="paymentMethodCa"
+                name="paymentMethod"
+                value="Conto Ca"
+              />
+              Conto Ca
+            </label>
+          </div>
           <button type="submit">Salva</button>
         </form>
       </div>
