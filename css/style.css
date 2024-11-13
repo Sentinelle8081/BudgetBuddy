@@ -58,3 +58,9 @@
 #paymentMethods {
   margin-bottom: 15px;
 }
+
+#note {
+  width: 100%;
+  margin-top: 10px;
+  resize: vertical;
+}
