@@ -4,95 +4,127 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestione Contabilità Familiare</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="container">
-      <h2>Budget Buddy - Calendario</h2>
-      <!-- Calendario -->
-      <div id="calendar"></div>
-    </div>
+    <!-- Header con logo e titolo -->
+    <header class="header">
+      <img
+        src="./assets/budget buddy logo with a Japanese theme.png"
+        alt="Logo di Budget Buddy"
+        class="logo"
+      />
+      <h1 class="site-title">Budget Buddy</h1>
+    </header>
 
-    <!-- Prima finestra modale per scegliere tipo di voce -->
-    <div id="initialModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h4>Inserisci una nuova voce</h4>
-        <label
-          ><input type="radio" name="entryType" value="spesa" /> Spesa
-          Effettuata</label
-        >
+    <!-- Navbar principale -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#monthly-summary">Resoconto Mensile</a></li>
+        <li><a href="#period-summary">Resoconto per Periodo</a></li>
+        <li><a href="#food-expenses">Registrazione spese Alimentari</a></li>
+        <li><a href="#forecast">Previsionale</a></li>
+      </ul>
+    </nav>
+    <!-- Contenuto principale della pagina -->
+    <main class="main-content">
+      <!-- Sidebar con link alle sezioni correlate -->
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#SpesePer Conto">Resoconto spese per conto</a></li>
+          <li><a href="#CategoriaDi Spesa">Resoconto categoria di spesa</a></li>
+          <li>
+            <a href="#mensileDettagliato">Resoconto mensile dettagliato</a>
+          </li>
+        </ul>
+      </aside>
 
-        <label
-          ><input type="radio" name="entryType" value="futura" /> Programmazione
-          Futuro</label
-        >
-        <button id="selectTypeButton">Conferma</button>
+      <section class="calendar-section">
+        <div id="calendar"></div>
+      </section>
+
+      <!-- Prima finestra modale per scegliere tipo di voce -->
+      <div id="initialModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h4>Inserisci una nuova voce</h4>
+          <label
+            ><input type="radio" name="entryType" value="spesa" /> Spesa
+            Effettuata</label
+          >
+
+          <label
+            ><input type="radio" name="entryType" value="futura" />
+            Programmazione Futuro</label
+          >
+          <button id="selectTypeButton">Conferma</button>
+        </div>
       </div>
-    </div>
 
-    <!-- Seconda finestra modale per inserire i dettagli della voce -->
-    <div id="detailsModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h4>Inserisci i dettagli della voce</h4>
-        <form id="entryForm">
-          <label for="amount">Importo:</label>
-          <input type="number" id="amount" name="amount" required />
+      <!-- Seconda finestra modale per inserire i dettagli della voce -->
+      <div id="detailsModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h4>Inserisci i dettagli della voce</h4>
+          <form id="entryForm">
+            <label for="amount">Importo:</label>
+            <input type="number" id="amount" name="amount" required />
 
-          <!-- Sezione metodi di pagamento (inizialmente nascosta) -->
-          <div id="paymentMethods" style="display: none">
-            <h5>Metodo di Pagamento:</h5>
-            <label>
-              <input
-                type="radio"
-                id="paymentMethodCash"
-                name="paymentMethod"
-                value="Contanti"
-              />
-              Contanti
-            </label>
-            <label>
-              <input
-                type="radio"
-                id="paymentMethodCh"
-                name="paymentMethod"
-                value="Conto Ch"
-              />
-              Conto Ch
-            </label>
-            <label>
-              <input
-                type="radio"
-                id="paymentMethodCa"
-                name="paymentMethod"
-                value="Conto Ca"
-              />
-              Conto Ca
-            </label>
-          </div>
-          <!-- Campo Note -->
-          <label for="note">Note:</label>
-          <textarea
-            id="note"
-            name="note"
-            rows="4"
-            placeholder="Spiega l'importo inserito..."
-          ></textarea>
-          <button type="submit">Salva</button>
-        </form>
+            <!-- Sezione metodi di pagamento (inizialmente nascosta) -->
+            <div id="paymentMethods" style="display: none">
+              <h5>Metodo di Pagamento:</h5>
+              <label>
+                <input
+                  type="radio"
+                  id="paymentMethodCash"
+                  name="paymentMethod"
+                  value="Contanti"
+                />
+                Contanti
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  id="paymentMethodCh"
+                  name="paymentMethod"
+                  value="Conto Ch"
+                />
+                Conto Ch
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  id="paymentMethodCa"
+                  name="paymentMethod"
+                  value="Conto Ca"
+                />
+                Conto Ca
+              </label>
+            </div>
+            <!-- Campo Note -->
+            <label for="note">Note:</label>
+            <textarea
+              id="note"
+              name="note"
+              rows="4"
+              placeholder="Spiega l'importo inserito..."
+            ></textarea>
+            <button type="submit">Salva</button>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <!-- FullCalendar -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+      <!-- FullCalendar -->
+      <link
+        href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css"
+        rel="stylesheet"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
 
-    <!-- Importa i JS esterni -->
-    <script type="module" src="js/calendar.js"></script>
+      <!-- Importa i JS esterni -->
+      <script type="module" src="js/calendar.js"></script>
+    </main>
   </body>
 </html>
