@@ -41,3 +41,16 @@
 .close:hover {
   color: #000;
 }
+
+/* Stile per la disposizione verticale dei radio e del pulsante */
+#initialModal .modal-content label {
+  display: block; /* Rende gli elementi a blocco per metterli uno sotto l'altro */
+  margin-top: 15px; /* Aggiunge spazio sopra per separarli */
+  text-align: left; /* Allinea i radio a sinistra */
+}
+
+#initialModal .modal-content button {
+  margin-top: 20px; /* Margine extra per separare il pulsante dai radio */
+  width: auto; /* Rende il pulsante più largo */
+  text-align: center;
+}
