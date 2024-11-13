@@ -172,3 +172,8 @@ body {
   margin-top: 10px;
   resize: vertical;
 }
+
+h4,
+h5 {
+  margin: 15px;
+}

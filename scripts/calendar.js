@@ -91,3 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Funzione per inizializzare il calendario
+export function initializeCalendar() {
+  const calendarEl = document.getElementById("calendar");
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "dayGridMonth",
+    dateClick: (info) => {
+      openModal("initialModal"); // Apri la prima modale
+      console.log("Data selezionata:", info.dateStr);
+    },
+  });
+  calendar.render();
+}
